@@ -3,11 +3,11 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Item } from '../_model/Item';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json'
-  })
-};
+// const httpOptions = {
+//   headers: new HttpHeaders({
+//     'Content-Type': 'application/json'
+//   })
+// };
 
 @Injectable({
   providedIn: 'root'
@@ -19,14 +19,11 @@ export class ItemService {
   model: any;
   constructor(private http: HttpClient) { }
 
-  getAllItems(): Observable<any[]> {
-    return this.http.get<any[]>(this.baseUrl + 'inventory');
+  getAllItems(): Observable<Item[]> {
+    return this.http.get<Item[]>(this.baseUrl + 'inventory');
   }
 
-  addItem(item: Item): Observable<any> {
-    const fd = new FormData();
-    fd.append('photo', item.photo);
-    console.log(item);
+  addItem(fd: FormData): Observable<any> {
     return this.http.post(this.baseUrl + 'inventory/add', fd);
   }
 }

@@ -7,12 +7,15 @@ import { AppComponent } from './app.component';
 import { ItemService } from './_service/item.service';
 import { NavComponent } from './nav/nav.component';
 import { NewItemComponent } from './new-item/new-item.component';
+import { ItemListComponent } from './item-list/item-list.component';
+import { SharedService } from './_service/shared.service';
 
 @NgModule({
   declarations: [
       AppComponent,
       NavComponent,
-      NewItemComponent
+      NewItemComponent,
+      ItemListComponent
    ],
   imports: [
     BrowserModule,
@@ -20,7 +23,8 @@ import { NewItemComponent } from './new-item/new-item.component';
     FormsModule
   ],
   providers: [
-    ItemService
+    ItemService,
+    SharedService
   ],
   bootstrap: [AppComponent]
 })

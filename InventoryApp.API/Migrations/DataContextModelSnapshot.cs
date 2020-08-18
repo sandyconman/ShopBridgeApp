@@ -56,6 +56,9 @@ namespace InventoryApp.API.Migrations
                     b.Property<string>("PhotoSize")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("photoUrl")
+                        .HasColumnType("TEXT");
+
                     b.HasKey("Id");
 
                     b.ToTable("Photo");

@@ -5,6 +5,7 @@ namespace InventoryApp.API.Model
         public int Id { get; set; }
         public string PhotoName { get; set; }
         public string PhotoSize { get; set; }
+        public string photoUrl { get; set; }
         public byte[] PhotoAsByteArray { get; set; }
     }
 }

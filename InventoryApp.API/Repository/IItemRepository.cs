@@ -6,6 +6,10 @@ namespace InventoryApp.API.Repository
 {
     public interface IItemRepository
     {
-         Task<IList<Item>> GetAllItems();
+        void Add<T>(T entity) where T: class;
+        Task<bool> SaveAll();
+        Task<IEnumerable<Item>> GetAllItems();
+        Task<Item> GetItem(int id);
+
     }
 }

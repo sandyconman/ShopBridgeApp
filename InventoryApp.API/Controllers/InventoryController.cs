@@ -23,13 +23,27 @@ namespace InventoryApp.API.Controllers
         [HttpGet]
         public async Task<IActionResult> Get() {
             var items = await _repo.GetAllItems();
+            foreach (var item in items) {
+                if(item.Photo.photoUrl != null) {
+                    item.Photo.PhotoAsByteArray = FileHelper.GetPhotoAsByteArray(item.Photo.photoUrl);
+                }
+            } 
             return Ok(items);
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> AddItem([FromForm]IFormFile photo) {
-            Console.WriteLine(photo);
-            return Ok();
+        public async Task<IActionResult> AddItem([FromForm]ItemDto itemDto) 
+        {
+            var item = new Item {
+                Name = itemDto.Name,
+                Description = itemDto.Description,
+                Price = itemDto.Price,
+                Photo = await FileHelper.CreatePhotoObject(itemDto.Photo)
+            };
+            _repo.Add(item);
+            if(await _repo.SaveAll())
+                return Ok();
+            return BadRequest("Upload error");
         }
     }
 }

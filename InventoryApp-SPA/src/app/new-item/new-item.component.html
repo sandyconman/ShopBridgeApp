@@ -25,8 +25,8 @@
               <!-- <div class="pt-6">
                 <img src="{{item.photoUrl}}" alt="">
               </div> -->
+              <button [disabled]="!newItemForm.valid" type="submit" class="btn btn-primary">Add Item to Inventory</button>
             </div>
-            <button [disabled]="!newItemForm.valid" type="submit" class="btn btn-primary">Add Item to Inventory</button>
           </div>
        </form>
   </div>

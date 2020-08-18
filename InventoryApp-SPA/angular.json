@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "InventoryApp-SPA"
+    }
+  },
+  "defaultProject": "InventoryApp-SPA",
+  "cli": {
+    "analytics": false
+  }
 }
