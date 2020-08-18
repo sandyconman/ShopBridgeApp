@@ -24,8 +24,8 @@ namespace InventoryApp.API.Controllers
         public async Task<IActionResult> Get() {
             var items = await _repo.GetAllItems();
             foreach (var item in items) {
-                if(item.Photo.photoUrl != null) {
-                    item.Photo.PhotoAsByteArray = FileHelper.GetPhotoAsByteArray(item.Photo.photoUrl);
+                if(item.Photo != null &&item.Photo.photoUrl != null) {
+                    item.Photo.PhotoAsByteArray = FileHelper.GetPhotoAsByteArray(item.Photo.PhotoName);
                 }
             } 
             return Ok(items);

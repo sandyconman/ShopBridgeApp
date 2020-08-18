@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Threading.Tasks;
 using InventoryApp.API.Model;
@@ -7,11 +8,23 @@ namespace InventoryApp.API.Repository
 {
     public class FileHelper
     {
+        public static string GenerateUniqueFileName(string fileName) {
+            var uniqueFileName = 
+                    Path.GetFileNameWithoutExtension(
+                    fileName) + "-" +
+                    DateTime.Now.ToString().Replace("/", "")
+                    .Replace(":", "").Replace(" ", "") + 
+                    Path.GetExtension(fileName);
+            return uniqueFileName;
+        }
         public static async Task<Photo> CreatePhotoObject(IFormFile file)
         {
+            if(file == null) 
+                return null;
+            var uniqueFileName = GenerateUniqueFileName(file.FileName);
             var photo = new Photo()
             {
-                PhotoName = file.FileName,
+                PhotoName = uniqueFileName,
                 PhotoSize = file.Length.ToString(),
             }; 
 
@@ -19,17 +32,14 @@ namespace InventoryApp.API.Repository
                 // write file to database
                 using (var memoryStream = new MemoryStream())
                 {
-                    await file.CopyToAsync(memoryStream);
-
-                    
+                    await file.CopyToAsync(memoryStream); 
                     photo.PhotoAsByteArray = memoryStream.ToArray();
-                     
                 }
             }
             else {
                 //put file in directory
                 var directory = Directory.GetCurrentDirectory();
-                var filePath = directory + @"\Content\" + file.FileName;
+                var filePath = directory + @"\Content\" + uniqueFileName;
 
                 using (var stream = File.Create(filePath))
                 {
@@ -40,10 +50,11 @@ namespace InventoryApp.API.Repository
             return photo;
         }
 
-        public static byte[] GetPhotoAsByteArray(string photoUrl)
+        public static byte[] GetPhotoAsByteArray(string fileName)
         {
             //var fileName = Path.GetFileName(photoUrl);
-            var file = File.ReadAllBytes(photoUrl);
+            var url = Directory.GetCurrentDirectory() + @"\Content\" + fileName;
+            var file = File.ReadAllBytes(url);
             return file;
         }
     }

@@ -10,7 +10,7 @@ import { SharedService } from '../_service/shared.service';
 })
 export class NewItemComponent implements OnInit {
 
-  item: any = {};
+  model: any = {};
   photo: File;
   constructor(private itemService: ItemService, private sharedService: SharedService) { }
 
@@ -24,14 +24,15 @@ export class NewItemComponent implements OnInit {
 
   addItem() {
     const fd = new FormData();
-    fd.append('name', this.item.name);
-    fd.append('description', this.item.description),
-    fd.append('price', this.item.price);
+    fd.append('name', this.model.name);
+    fd.append('description', this.model.description),
+    fd.append('price', this.model.price);
     fd.append('photo', this.photo);
-
+    console.log(fd);
     this.itemService.addItem(fd).subscribe(response => {
       //  load data in list component
       this.sharedService.sendClickEvent();
+      this.model = {};
     }, error => {
       console.log("Add item failure");
     });

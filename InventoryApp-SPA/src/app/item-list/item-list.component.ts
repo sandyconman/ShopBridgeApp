@@ -35,7 +35,8 @@ export class ItemListComponent implements OnInit {
           name: item.name,
           description: item.description,
           price: item.price,
-          photo: this.getImageSrc(item.photo['photoAsByteArray'])
+          photo: (item.photo == null) ? "" :
+            this.getImageSrc(item.photo['photoAsByteArray'])
         };
         this.cards.push(card);
       });
