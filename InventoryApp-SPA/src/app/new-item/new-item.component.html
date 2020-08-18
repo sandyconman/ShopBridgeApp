@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="mt-6">
+    <strong class="mt-2">Fill the details for new item</strong>
+      <form #newItemForm="ngForm" class="w-100" (submit)="addItem()">
+        <div class="row">
+            <div class="col-lg-8 mt-4">
+              <div class="form-group">
+                <input type="text" required class="form-control" id="item-name" name="name" placeholder="Item Name"
+                  [(ngModel)]="item.name">
+              </div>
+              <div class="form-group">
+                <textarea rows="3" class="form-control" id="description" name="description" placeholder="Description"
+                 [(ngModel)]="item.description"></textarea>
+              </div>
+              <div class="form-group">
+                <input type="number" required class="form-control" id="price" name="price" placeholder="Price"
+                 [(ngModel)]="item.price">
+              </div>
+            </div>
+            <div class="col-lg-4 mt-4">
+              <div class="form-group">
+                <label for="uploadPhoto">Upload Photo</label>
+                <input type="file" class="form-control-file" id="uploadPhoto" name="photo" (change)="onPhotoSelected($event)" #photoInput>
+              </div>
+              <!-- <div class="pt-6">
+                <img src="{{item.photoUrl}}" alt="">
+              </div> -->
+            </div>
+            <button [disabled]="!newItemForm.valid" type="submit" class="btn btn-primary">Add Item to Inventory</button>
+          </div>
+       </form>
+  </div>
+</div>
