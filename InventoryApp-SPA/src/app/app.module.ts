@@ -9,13 +9,15 @@ import { NavComponent } from './nav/nav.component';
 import { NewItemComponent } from './new-item/new-item.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { SharedService } from './_service/shared.service';
+import { ItemCardComponent } from './item-card/item-card.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
       AppComponent,
       NavComponent,
       NewItemComponent,
-      ItemListComponent
+      ItemListComponent,
+      ItemCardComponent
    ],
   imports: [
     BrowserModule,

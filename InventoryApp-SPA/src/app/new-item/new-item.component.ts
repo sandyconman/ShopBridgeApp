@@ -28,13 +28,12 @@ export class NewItemComponent implements OnInit {
     fd.append('description', this.model.description),
     fd.append('price', this.model.price);
     fd.append('photo', this.photo);
-    console.log(fd);
     this.itemService.addItem(fd).subscribe(response => {
       //  load data in list component
       this.sharedService.sendClickEvent();
       this.model = {};
     }, error => {
-      console.log("Add item failure");
+      console.log('Add item failure');
     });
   }
 
