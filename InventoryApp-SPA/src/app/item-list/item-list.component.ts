@@ -35,18 +35,18 @@ export class ItemListComponent implements OnInit {
           name: item.name,
           description: item.description,
           price: item.price,
-          photo: (item.photo == null) ? "" :
-            this.getImageSrc(item.photo['photoAsByteArray'])
+          photo: (item.photo == null) ? '' :
+            this.getImageSrc(item.photo.photoAsByteArray)
         };
         this.cards.push(card);
       });
     }, error => {
-      console.log("Couldn't load items");
+      console.log('Couldn\'t load items');
     })
   }
 
   getImageSrc(data: Blob) {
-    let objectURL = 'data:image/png;base64,' + data;
+    const objectURL = 'data:image/png;base64,' + data;
     return this.sanitizer.bypassSecurityTrustUrl(objectURL);
   }
 

@@ -10,19 +10,26 @@ import { NewItemComponent } from './new-item/new-item.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { SharedService } from './_service/shared.service';
 import { ItemCardComponent } from './item-card/item-card.component';
+import { HomeComponent } from './home/home.component';
+import { ItemDetailsComponent } from './item-details/item-details.component';
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
 
 @NgModule({
-  declarations: [	
+  declarations: [
       AppComponent,
       NavComponent,
       NewItemComponent,
       ItemListComponent,
-      ItemCardComponent
+      ItemCardComponent,
+      HomeComponent,
+      ItemDetailsComponent
    ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     ItemService,

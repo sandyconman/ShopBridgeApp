@@ -1,0 +1,19 @@
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <img class="card-img-top img-thumbnail" [src]="getImageSrc(item?.photo.photoAsByteArray)" alt="">
+        
+      </div>
+    </div>
+    <div class="col-sm-5 ml-4">
+      <h4 class="display-4">{{item?.name}}</h4>
+      <div class="panel pt-2">
+        <p class="lead">{{item?.description}}</p>
+      </div>
+      <div class="amount text">
+        {{item?.price | currency: "INR"}}
+      </div>
+    </div>
+  </div>
+</div>

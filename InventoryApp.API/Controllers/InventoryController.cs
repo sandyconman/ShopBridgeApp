@@ -21,7 +21,8 @@ namespace InventoryApp.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get() {
+        public async Task<IActionResult> GetItems() 
+        {
             var items = await _repo.GetAllItems();
             foreach (var item in items) {
                 if(item.Photo != null &&item.Photo.photoUrl != null) {
@@ -44,6 +45,25 @@ namespace InventoryApp.API.Controllers
             if(await _repo.SaveAll())
                 return Ok();
             return BadRequest("Upload error");
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id) 
+        {
+            var itemToDelete = await _repo.GetItem(id);
+            _repo.Delete(itemToDelete);
+            if(await _repo.SaveAll()) 
+                return Ok();
+            return BadRequest("Deletion failed");
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetItem(int id) {
+            var item = await _repo.GetItem(id);
+            if(item.Photo != null &&item.Photo.photoUrl != null) {
+                item.Photo.PhotoAsByteArray = FileHelper.GetPhotoAsByteArray(item.Photo.PhotoName);
+            }
+            return Ok(item);
         }
     }
 }

@@ -2,16 +2,38 @@
     transform: scale(1.2, 1.2);
     transition-duration: 500ms;
     transition-timing-function: ease-out;
-    opacity: 0.7
+    opacity: 0.7;
+    cursor: pointer;
 }
 
 .card img {
     transform: scale(1, 1);
     transition-duration: 500ms;
     transition-timing-function: ease-out;
-    opacity: 1
+    opacity: 1;
 }
 
 .card-img-wrapper {
     overflow: hidden;
+    position: relative;
+    height: 130px;
+}
+
+.card-icons {
+    position: absolute;
+    bottom: -30%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+}
+
+.card-img-wrapper:hover .card-icons {
+    bottom: 0;
+    opacity: 1;
+}
+
+.animate {
+    transition: all 0.3s ease-in-out;
 }

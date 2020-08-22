@@ -26,4 +26,12 @@ export class ItemService {
   addItem(fd: FormData): Observable<any> {
     return this.http.post(this.baseUrl + 'inventory/add', fd);
   }
+
+  deleteItem(id: number) {
+    return this.http.delete(this.baseUrl + 'inventory/' + id);
+  }
+
+  getItem(id: number) {
+    return this.http.get<Item>(this.baseUrl + 'inventory/' + id);
+  }
 }

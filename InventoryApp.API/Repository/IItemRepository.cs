@@ -7,6 +7,7 @@ namespace InventoryApp.API.Repository
     public interface IItemRepository
     {
         void Add<T>(T entity) where T: class;
+        void Delete<T>(T entity) where T: class;
         Task<bool> SaveAll();
         Task<IEnumerable<Item>> GetAllItems();
         Task<Item> GetItem(int id);

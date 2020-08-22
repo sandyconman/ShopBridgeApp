@@ -22,6 +22,11 @@ namespace InventoryApp.API.Repository
             _context.Add(entity);
         }
 
+        public void Delete<T>(T entity) where T : class
+        {
+            _context.Remove(entity);
+        }
+
         public async Task<IEnumerable<Item>> GetAllItems()
         {
             return await _context.Items.Include(i => i.Photo).ToListAsync();
