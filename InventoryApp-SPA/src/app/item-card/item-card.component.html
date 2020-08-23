@@ -3,7 +3,7 @@
     <img class="card-img-top" height="120" [src]="card.photo" alt="{{card.name}}" srcset="">
     <ul class="list-inline card-icons animate text-center">
       <li class="list-inline-item">
-        <button class="btn btn-primary" (click)="deleteItem()"><i class="fa fa-trash"></i></button>
+        <button class="btn btn-primary" (click)="deleteItem($event)"><i class="fa fa-trash"></i></button>
       </li>
     </ul>
   </div>

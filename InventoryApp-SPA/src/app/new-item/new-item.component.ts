@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ItemService } from '../_service/item.service';
 import { Item } from '../_model/Item';
 import { SharedService } from '../_service/shared.service';
+import { AlertifyService } from '../_service/alertify.service';
 
 @Component({
   selector: 'app-new-item',
@@ -12,14 +13,13 @@ export class NewItemComponent implements OnInit {
 
   model: any = {};
   photo: File;
-  constructor(private itemService: ItemService, private sharedService: SharedService) { }
+  constructor(private itemService: ItemService, private sharedService: SharedService, private alertifyService: AlertifyService) { }
 
   ngOnInit() {
   }
 
   onPhotoSelected(event) {
     this.photo = event.target.files[0] as File;
-    console.log(this.photo);
   }
 
   addItem() {
@@ -33,8 +33,7 @@ export class NewItemComponent implements OnInit {
       this.sharedService.sendClickEvent();
       this.model = {};
     }, error => {
-      console.log('Add item failure');
+      this.alertifyService.error('Add item failure');
     });
   }
-
 }

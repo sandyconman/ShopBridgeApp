@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Item } from '../_model/Item';
+import { environment } from 'src/environments/environment';
 
 // const httpOptions = {
 //   headers: new HttpHeaders({
@@ -14,7 +15,7 @@ import { Item } from '../_model/Item';
 })
 export class ItemService {
 
-  baseUrl = 'http://localhost:5000/api/';
+  baseUrl = environment.apiUrl;
 
   model: any;
   constructor(private http: HttpClient) { }

@@ -17,7 +17,8 @@ export class ItemCardComponent implements OnInit {
   ngOnInit() {
   }
 
-  deleteItem() {
+  deleteItem(event) {
+    event.stopPropagation();
     this.alertifyService.confirm('Do you want to delete ' + this.card.name, () => {
       this.itemService.deleteItem(this.card.id).subscribe(() => {
         this.alertifyService.message(this.card.name + 'deleted.');

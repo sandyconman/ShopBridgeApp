@@ -5,6 +5,7 @@ import { DomSanitizer} from '@angular/platform-browser';
 import { ItemCard } from '../_model/ItemCard';
 import { SharedService } from '../_service/shared.service';
 import { Subscription } from 'rxjs';
+import { AlertifyService } from '../_service/alertify.service';
 
 @Component({
   selector: 'app-item-list',
@@ -16,7 +17,8 @@ export class ItemListComponent implements OnInit {
   cards: ItemCard[] = [];
   clickEventsubscription: Subscription;
 
-  constructor(private itemService: ItemService, private sanitizer: DomSanitizer, private sharedService: SharedService) { 
+  constructor(private itemService: ItemService, private sanitizer: DomSanitizer, 
+              private sharedService: SharedService, private alertifyService: AlertifyService) {
     this.clickEventsubscription = this.sharedService.getClickEvent().subscribe(() => {
       this.loadItems();
     });
@@ -41,8 +43,8 @@ export class ItemListComponent implements OnInit {
         this.cards.push(card);
       });
     }, error => {
-      console.log('Couldn\'t load items');
-    })
+      this.alertifyService.error('Couldn\'t load items');
+    });
   }
 
   getImageSrc(data: Blob) {
