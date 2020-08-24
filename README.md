@@ -1,7 +1,7 @@
 
 
 
-<!-- PROJECT LOGO -->
+<!-- PROJECT Name -->
 <br />
 <p align="center">
    <h3 align="center">ShopBridge App</h3>
@@ -11,8 +11,6 @@
     <br />
     <a href="https://github.com/sandyconman/InventoryApp"><strong>Explore the docs »</strong></a>
     <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
   </p>
 </p>
 
@@ -27,7 +25,7 @@
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Tracking](#tracking)
-* [Known Issues(#known issues)
+* [Known Issues](#known issues)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
@@ -57,7 +55,7 @@ This section should list any major frameworks that you built your project using.
 * [ASP.NET Core v-3.0](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-3.1)
 * [Enity Framework](https://docs.microsoft.com/en-us/ef/)
 * [Angular 9](https://angular.io)
-* [SQLite] (https://www.sqlite.org/index.html)
+* [SQLite](https://www.sqlite.org/index.html)
 * [Bootstrap](https://getbootstrap.com)
 * [Alertify JS](https://alertifyjs.com/)
 
@@ -130,7 +128,7 @@ Backend-Frontend Integration: Roughly 6 hours. I was stuck at a point where phot
 Unit Test coverage: Roughly 2 hours. I tested the API's using POSTMAN to check for anomalies.
 
 
-<!-- KNOWN ISSUES
+<!-- KNOWN ISSUES -->
 ## Issues
 
 There are some issues which are known to me:
@@ -158,7 +156,7 @@ Project Link: [https://github.com/sandyconman/InventoryApp](https://github.com/s
 * [ASP.NET Core v-3.0](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-3.1)
 * [Enity Framework](https://docs.microsoft.com/en-us/ef/)
 * [Angular 9](https://angular.io)
-* [SQLite] (https://www.sqlite.org/index.html)
+* [SQLite](https://www.sqlite.org/index.html)
 * [Bootstrap](https://getbootstrap.com)
 * [Alertify JS](https://alertifyjs.com/)
 * [Font Awesome](https://fontawesome.com)
