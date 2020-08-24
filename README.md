@@ -25,7 +25,7 @@
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Tracking](#tracking)
-* [Known Issues](#known issues)
+* [Known Issues](#issues)
 * [Contact](#contact)
 * [Acknowledgements](#acknowledgements)
 
@@ -33,8 +33,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 This project is solely made for assessmentof ThinkBridge. I tried to include everything that can be considered as a plus point in evaluation. In addition to completing the functionality requirements, I have spent a significant time to employ best practices in this project. I have adhered to SOLID principles and since ASP.NET Core allows a great service-based architecture, I used it to employ a lot of techniques in building this project. The frontend of this project is made in Angular which provides a wonderful SPA architecture to build apps. The app is production ready.
 This app also uses SQLite which is a light weight database and can ve chnaged to MySQl or Sql Server, since it ustilized CodeFirst technique of Entity Framework. We just need to change connection string, install a package (eg : Microsoft.EntityFrameworkCore.SqlServer) and run migrations.
