@@ -64,6 +64,8 @@ In this repository, I have included all the files of Frontend and Backend applic
 
 ### Prerequisites
 
+* download [.NET CORE SDK v-3.0](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+
 * npm
 ```sh
 npm install npm@latest -g
@@ -74,7 +76,6 @@ or download [node.js](https://nodejs.org/en/)
 ```sh
 npm install -g @angular/cli
 ```
-* download [.NET CORE SDK v-3.0](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 
 
 ### Installation
@@ -83,7 +84,7 @@ npm install -g @angular/cli
 ```sh
 git clone https://github.com/sandyconman/InventoryApp.git
 ```
-2. Install NPM packages
+2. Navigate to InventoryApp.SPA directory and Install NPM packages (not required for running of application. Just for testing Frontend.)
 ```sh
 npm install
 ```
