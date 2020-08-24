@@ -64,7 +64,7 @@ In this repository, I have included all the files of Frontend and Backend applic
 
 ### Prerequisites
 
-* download [.NET CORE SDK v-3.0](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+* download [.NET CORE CLI](https://dotnet.microsoft.com/download)
 
 * npm
 ```sh
