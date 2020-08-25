@@ -23,7 +23,7 @@
   * [Built With](#built-with)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
-  * [Installation](#installation)
+  * [Run application](#run-application)
 * [Tracking](#tracking)
 * [Known Issues](#issues)
 * [Contact](#contact)
@@ -43,6 +43,8 @@ Here are the techniques used in this app:
 * Repository pattern
 * Global Exception Handling (In Startup class)
 * CodeFirst technique of EF
+
+<b>Note: This application is created on Visual Studio Code text editor using dotnet and angular CLI. There is no .sln file. Project can be viewed on VS Code. Please follow instructions in [Getting Started](#getting-started) to run the app.</b>
 
 Of Course, a project is never ever complete. There are always ways to improvement. This is the first thing we understand by AGILE approach. However. I tried to do everything mentioned in the requirements given. I apologize if I missed something.
 
@@ -64,9 +66,13 @@ In this repository, I have included all the files of Frontend and Backend applic
 
 ### Prerequisites
 
-* download [.NET CORE CLI](https://dotnet.microsoft.com/download)
+* download or update [.NET CORE CLI v-3.0 plus](https://dotnet.microsoft.com/download). Download and Install .NET CORE SDK. Type 
+```sh
+dotnet --version
+```
+on Command line to verify.
 
-* npm
+* npm to install packages. ( Not required to run the application. Use for evaluation purpose only)
 ```sh
 npm install npm@latest -g
 ```
@@ -78,21 +84,23 @@ npm install -g @angular/cli
 ```
 
 
-### Installation
+### Run Application
 
 1. Clone the repo
 ```sh
 git clone https://github.com/sandyconman/InventoryApp.git
 ```
-2. Navigate to InventoryApp.SPA directory and Install NPM packages (not required for running of application. Just for testing Frontend.)
+2. Navigate to the InventoryApp.API directory and execute commands on command line
+```JS
+dotnet build
+dotnet run
+```
+3. Visit url 'http://localhost:5000/' to see the application running. Add items through inventory form and view the list below.
+
+4. Navigate to InventoryApp.SPA directory and Install NPM packages (not required for running of application. Just for testing Frontend.)
 ```sh
 npm install
 ```
-3. Navigate to the InventoryApp.API directory and run command
-```JS
-dotnet run
-```
-4. Visit url 'http://localhost:5000/' to see the application running. Add items through inventory form and view the list below.
 
 
 <!-- tracking -->
